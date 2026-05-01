@@ -110,6 +110,8 @@ code { font-family: ui-monospace, monospace; }
 </table>
 
 <script>
+/*
+BEGIN ARCHIVED EMBEDDED DATA: Thursday 30th April
 const datasets = [
   {
     "id": "brn:default:hosp200",
@@ -7945,6 +7947,4195 @@ const datasets = [
 
 const dataSourceMeta = {
   detailsHtml: 'R API version = <code>0.1.12</code>; model version = <code>0.3.7</code>.'
+};
+END ARCHIVED EMBEDDED DATA: Thursday 30th April
+*/
+
+const datasets = [
+  {
+    "id": "brn:default:hosp200",
+    "country_code": "brn",
+    "country_label": "Brunei",
+    "behaviour": "default",
+    "hospital_capacity": "200",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.8777566717541376,
+        "costs": [
+          100000,
+          97000,
+          55400,
+          6470
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.008860940032009346,
+        "costs": [
+          9340,
+          9320,
+          9290,
+          9080
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          7100,
+          7100,
+          7100,
+          7100
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": 0.0,
+        "costs": [
+          20700,
+          20700,
+          20700,
+          20700
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.016799975284598468,
+        "costs": [
+          3820,
+          3820,
+          3780,
+          3630
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.0018234799747832043,
+        "costs": [
+          4360,
+          4330,
+          4330,
+          4330
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          44500,
+          44500,
+          44500,
+          44500
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.1414956017407439,
+        "costs": [
+          89000,
+          89000,
+          88100,
+          55700
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.00010603030491100896,
+        "costs": [
+          9210,
+          9210,
+          9210,
+          9200
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          3640,
+          3640,
+          3640,
+          3640
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": 0.0,
+        "costs": [
+          17400,
+          17400,
+          17400,
+          17400
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -4.17198487498105e-05,
+        "costs": [
+          355,
+          355,
+          355,
+          355
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -2.4966781175805863e-07,
+        "costs": [
+          1920,
+          1920,
+          1920,
+          1920
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          41400,
+          41400,
+          41400,
+          41400
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.19915450527739953,
+        "costs": [
+          92600,
+          92600,
+          89400,
+          48300
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0001286569742502408,
+        "costs": [
+          12400,
+          12400,
+          12400,
+          12400
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          7010,
+          7010,
+          7010,
+          7010
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": 0.0,
+        "costs": [
+          20800,
+          20800,
+          20800,
+          20800
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -9.243988764850997e-06,
+        "costs": [
+          3700,
+          3700,
+          3700,
+          3700
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -1.7320603831194604e-07,
+        "costs": [
+          5200,
+          5200,
+          5200,
+          5200
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          44700,
+          44700,
+          44700,
+          44700
+        ]
+      }
+    ]
+  },
+  {
+    "id": "brn:max:hosp200",
+    "country_code": "brn",
+    "country_label": "Brunei",
+    "behaviour": "max",
+    "hospital_capacity": "200",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.8777566717541376,
+        "costs": [
+          100000,
+          97000,
+          55400,
+          6470
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.008860940032009346,
+        "costs": [
+          9340,
+          9320,
+          9290,
+          9080
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          7100,
+          7100,
+          7100,
+          7100
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": 0.0,
+        "costs": [
+          20700,
+          20700,
+          20700,
+          20700
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.016799975284598468,
+        "costs": [
+          3820,
+          3820,
+          3780,
+          3630
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.0018234799747832043,
+        "costs": [
+          4360,
+          4330,
+          4330,
+          4330
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          44500,
+          44500,
+          44500,
+          44500
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.1414956017407439,
+        "costs": [
+          89000,
+          89000,
+          88100,
+          55700
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.00010603030491100896,
+        "costs": [
+          9210,
+          9210,
+          9210,
+          9200
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          3640,
+          3640,
+          3640,
+          3640
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": 0.0,
+        "costs": [
+          17400,
+          17400,
+          17400,
+          17400
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -4.17198487498105e-05,
+        "costs": [
+          355,
+          355,
+          355,
+          355
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -2.4966781175805863e-07,
+        "costs": [
+          1920,
+          1920,
+          1920,
+          1920
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          41400,
+          41400,
+          41400,
+          41400
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.19915450527739953,
+        "costs": [
+          92600,
+          92600,
+          89400,
+          48300
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0001286569742502408,
+        "costs": [
+          12400,
+          12400,
+          12400,
+          12400
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          7010,
+          7010,
+          7010,
+          7010
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": 0.0,
+        "costs": [
+          20800,
+          20800,
+          20800,
+          20800
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -9.243988764850997e-06,
+        "costs": [
+          3700,
+          3700,
+          3700,
+          3700
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -1.7320603831194604e-07,
+        "costs": [
+          5200,
+          5200,
+          5200,
+          5200
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          44700,
+          44700,
+          44700,
+          44700
+        ]
+      }
+    ]
+  },
+  {
+    "id": "idn:default:hosp71100",
+    "country_code": "idn",
+    "country_label": "Indonesia",
+    "behaviour": "default",
+    "hospital_capacity": "71100",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.0202861393793357,
+        "costs": [
+          10900000,
+          10100000,
+          5200000,
+          454000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.016763377677077074,
+        "costs": [
+          1130000,
+          1130000,
+          1120000,
+          1070000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          870000,
+          870000,
+          870000,
+          870000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -5.066043584633917e-10,
+        "costs": [
+          2490000,
+          2490000,
+          2490000,
+          2490000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.03991102131424231,
+        "costs": [
+          497000,
+          497000,
+          463000,
+          446000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.048700906547896675,
+        "costs": [
+          578000,
+          560000,
+          508000,
+          508000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          4960000,
+          4960000,
+          4960000,
+          4960000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.19581389298150587,
+        "costs": [
+          9800000,
+          9800000,
+          9550000,
+          5140000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.00021175961368484763,
+        "costs": [
+          1100000,
+          1100000,
+          1100000,
+          1100000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -1.35823619018538e-10,
+        "costs": [
+          442000,
+          442000,
+          442000,
+          442000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -9.088767072285008e-10,
+        "costs": [
+          2080000,
+          2080000,
+          2080000,
+          2080000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -7.689330884392831e-05,
+        "costs": [
+          65900,
+          65900,
+          65900,
+          65900
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -8.247303933117678e-07,
+        "costs": [
+          225000,
+          225000,
+          225000,
+          225000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -6.533440455314121e-12,
+        "costs": [
+          4590000,
+          4590000,
+          4590000,
+          4590000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.2653952094398157,
+        "costs": [
+          10300000,
+          10300000,
+          9710000,
+          4340000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.00025283296997926643,
+        "costs": [
+          1420000,
+          1420000,
+          1420000,
+          1420000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -3.8343728192558044e-11,
+        "costs": [
+          782000,
+          782000,
+          782000,
+          782000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -7.566582027607183e-10,
+        "costs": [
+          2420000,
+          2420000,
+          2420000,
+          2420000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -2.76746209326717e-05,
+        "costs": [
+          398000,
+          398000,
+          398000,
+          398000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -6.273684707736038e-07,
+        "costs": [
+          554000,
+          554000,
+          554000,
+          554000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -1.2181722297555097e-11,
+        "costs": [
+          4930000,
+          4930000,
+          4930000,
+          4930000
+        ]
+      }
+    ]
+  },
+  {
+    "id": "idn:max:hosp92500",
+    "country_code": "idn",
+    "country_label": "Indonesia",
+    "behaviour": "max",
+    "hospital_capacity": "92500",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.0201977233534822,
+        "costs": [
+          10900000,
+          10100000,
+          5180000,
+          454000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.016790512922332468,
+        "costs": [
+          1120000,
+          1120000,
+          1110000,
+          1060000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -3.471463116966333e-11,
+        "costs": [
+          864000,
+          864000,
+          864000,
+          864000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -5.076611131471509e-10,
+        "costs": [
+          2480000,
+          2480000,
+          2480000,
+          2480000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.03338505298466874,
+        "costs": [
+          489000,
+          489000,
+          463000,
+          446000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.034547361153547486,
+        "costs": [
+          555000,
+          519000,
+          501000,
+          500000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          4950000,
+          4950000,
+          4950000,
+          4950000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.19625489584039676,
+        "costs": [
+          9780000,
+          9780000,
+          9540000,
+          5130000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0002078208989139796,
+        "costs": [
+          1090000,
+          1090000,
+          1090000,
+          1090000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -1.375140001869113e-10,
+        "costs": [
+          436000,
+          436000,
+          436000,
+          436000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -8.966843267899094e-10,
+        "costs": [
+          2070000,
+          2070000,
+          2070000,
+          2070000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -8.93171543648208e-05,
+        "costs": [
+          56800,
+          56800,
+          56800,
+          56700
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -8.395221099632977e-07,
+        "costs": [
+          221000,
+          221000,
+          221000,
+          221000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -1.3090328820908325e-11,
+        "costs": [
+          4580000,
+          4580000,
+          4580000,
+          4580000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.2662325666827991,
+        "costs": [
+          10300000,
+          10300000,
+          9700000,
+          4320000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.00024845092191405627,
+        "costs": [
+          1410000,
+          1410000,
+          1410000,
+          1410000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -7.722249506514345e-11,
+        "costs": [
+          777000,
+          777000,
+          777000,
+          777000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -7.707136262524728e-10,
+        "costs": [
+          2410000,
+          2410000,
+          2410000,
+          2410000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -2.9261561587468067e-05,
+        "costs": [
+          376000,
+          376000,
+          376000,
+          376000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -6.320831282380368e-07,
+        "costs": [
+          550000,
+          550000,
+          550000,
+          550000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -1.220143985847244e-11,
+        "costs": [
+          4920000,
+          4920000,
+          4920000,
+          4920000
+        ]
+      }
+    ]
+  },
+  {
+    "id": "khm:default:hosp2300",
+    "country_code": "khm",
+    "country_label": "Cambodia",
+    "behaviour": "default",
+    "hospital_capacity": "2300",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.00068769461843,
+        "costs": [
+          245000,
+          226000,
+          114000,
+          11000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.017402657835194724,
+        "costs": [
+          26600,
+          26500,
+          26300,
+          25100
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -1.4664157887978035e-09,
+        "costs": [
+          20500,
+          20500,
+          20500,
+          20500
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -5.176573836251919e-10,
+        "costs": [
+          58000,
+          58000,
+          58000,
+          58000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.04221592923083435,
+        "costs": [
+          12300,
+          12300,
+          11900,
+          10800
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.060856631691754794,
+        "costs": [
+          14300,
+          14100,
+          12300,
+          12200
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          114000,
+          114000,
+          114000,
+          114000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.21179390281390625,
+        "costs": [
+          220000,
+          220000,
+          213000,
+          110000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0002702821454835913,
+        "costs": [
+          25100,
+          25100,
+          25100,
+          25100
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          9920,
+          9920,
+          9920,
+          9920
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.2509609348398954e-09,
+        "costs": [
+          48000,
+          48000,
+          48000,
+          48000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -8.490431155045996e-05,
+        "costs": [
+          1700,
+          1700,
+          1700,
+          1700
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -1.1910706538387217e-06,
+        "costs": [
+          4890,
+          4890,
+          4890,
+          4890
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          106000,
+          106000,
+          106000,
+          106000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.2703293972547275,
+        "costs": [
+          231000,
+          231000,
+          217000,
+          95700
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.00030347550442808566,
+        "costs": [
+          33000,
+          33000,
+          33000,
+          32900
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -1.6485538267829725e-09,
+        "costs": [
+          18200,
+          18200,
+          18200,
+          18200
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.0677293715843915e-09,
+        "costs": [
+          56200,
+          56200,
+          56200,
+          56200
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -2.8604329393111527e-05,
+        "costs": [
+          9820,
+          9820,
+          9820,
+          9820
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -7.890137657895479e-07,
+        "costs": [
+          12900,
+          12900,
+          12900,
+          12900
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          114000,
+          114000,
+          114000,
+          114000
+        ]
+      }
+    ]
+  },
+  {
+    "id": "khm:max:hosp2900",
+    "country_code": "khm",
+    "country_label": "Cambodia",
+    "behaviour": "max",
+    "hospital_capacity": "2900",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.0006425852009637,
+        "costs": [
+          245000,
+          226000,
+          114000,
+          11000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.01740187144052907,
+        "costs": [
+          26500,
+          26400,
+          26200,
+          25000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          20400,
+          20400,
+          20400,
+          20400
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -5.181401974141409e-10,
+        "costs": [
+          57900,
+          57900,
+          57900,
+          57900
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.04033698299363557,
+        "costs": [
+          12200,
+          12200,
+          11800,
+          10800
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.05808903713470439,
+        "costs": [
+          14100,
+          13900,
+          12200,
+          12100
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          114000,
+          114000,
+          114000,
+          114000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.21201442879167337,
+        "costs": [
+          220000,
+          220000,
+          213000,
+          110000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0002683080395625481,
+        "costs": [
+          25100,
+          25100,
+          25100,
+          25100
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -3.039390072956394e-09,
+        "costs": [
+          9870,
+          9870,
+          9870,
+          9870
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.2523731385272186e-09,
+        "costs": [
+          47900,
+          47900,
+          47900,
+          47900
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -8.998435341629474e-05,
+        "costs": [
+          1610,
+          1610,
+          1610,
+          1600
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -1.2015150485211735e-06,
+        "costs": [
+          4840,
+          4840,
+          4840,
+          4840
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          106000,
+          106000,
+          106000,
+          106000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.27070083330518474,
+        "costs": [
+          231000,
+          231000,
+          217000,
+          95600
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0003013517074620609,
+        "costs": [
+          32900,
+          32900,
+          32900,
+          32900
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          18100,
+          18100,
+          18100,
+          18100
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.0687573492873526e-09,
+        "costs": [
+          56100,
+          56100,
+          56100,
+          56100
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -2.89402441483233e-05,
+        "costs": [
+          9700,
+          9700,
+          9700,
+          9700
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -7.940384712412651e-07,
+        "costs": [
+          12900,
+          12900,
+          12900,
+          12900
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          114000,
+          114000,
+          114000,
+          114000
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lao:default:hosp1600",
+    "country_code": "lao",
+    "country_label": "Laos",
+    "behaviour": "default",
+    "hospital_capacity": "1600",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.0228311305373432,
+        "costs": [
+          190000,
+          160000,
+          69900,
+          8270
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.046698482336528714,
+        "costs": [
+          21400,
+          21400,
+          20400,
+          18600
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          16000,
+          16000,
+          16000,
+          16000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.9209444701573377e-09,
+        "costs": [
+          46900,
+          46900,
+          46900,
+          46900
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.042984473327802954,
+        "costs": [
+          9370,
+          9370,
+          8850,
+          8270
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.08905684993652159,
+        "costs": [
+          11000,
+          11000,
+          9930,
+          8430
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          89700,
+          89700,
+          89700,
+          89700
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.36788460037109444,
+        "costs": [
+          179000,
+          179000,
+          164000,
+          54000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0005755810640458492,
+        "costs": [
+          20400,
+          20400,
+          20400,
+          20400
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          7900,
+          7900,
+          7900,
+          7900
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -2.2831917689813962e-09,
+        "costs": [
+          39400,
+          39400,
+          39400,
+          39400
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.0005733539202258164,
+        "costs": [
+          948,
+          948,
+          948,
+          946
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -6.5072736564530945e-06,
+        "costs": [
+          3660,
+          3660,
+          3660,
+          3660
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          84600,
+          84600,
+          84600,
+          84600
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.4642458985154116,
+        "costs": [
+          188000,
+          188000,
+          163000,
+          42000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0006666000734041333,
+        "costs": [
+          27000,
+          27000,
+          27000,
+          26900
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          14800,
+          14800,
+          14800,
+          14800
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.2960214235135935e-09,
+        "costs": [
+          46300,
+          46300,
+          46300,
+          46300
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.00015496295712953413,
+        "costs": [
+          7690,
+          7690,
+          7690,
+          7680
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -4.6353937381837795e-06,
+        "costs": [
+          10400,
+          10400,
+          10400,
+          10400
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -3.2888092249550027e-10,
+        "costs": [
+          91200,
+          91200,
+          91200,
+          91200
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lao:max:hosp2100",
+    "country_code": "lao",
+    "country_label": "Laos",
+    "behaviour": "max",
+    "hospital_capacity": "2100",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.0228257932001645,
+        "costs": [
+          190000,
+          160000,
+          69600,
+          8270
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.034714501410351595,
+        "costs": [
+          20600,
+          20600,
+          20200,
+          18500
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          16000,
+          16000,
+          16000,
+          16000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.924526671359672e-09,
+        "costs": [
+          46800,
+          46800,
+          46800,
+          46800
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.038291090473286715,
+        "costs": [
+          9190,
+          9190,
+          8580,
+          8270
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.0866980570705671,
+        "costs": [
+          10900,
+          10900,
+          9730,
+          8430
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          89600,
+          89600,
+          89600,
+          89600
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.36933512131964596,
+        "costs": [
+          179000,
+          179000,
+          164000,
+          53600
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0005709186941802002,
+        "costs": [
+          20300,
+          20300,
+          20300,
+          20300
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          7810,
+          7810,
+          7810,
+          7810
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -2.288239464576236e-09,
+        "costs": [
+          39300,
+          39300,
+          39300,
+          39300
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.0011570034507479398,
+        "costs": [
+          470,
+          470,
+          470,
+          468
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -6.662627548337241e-06,
+        "costs": [
+          3570,
+          3570,
+          3570,
+          3570
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          84500,
+          84500,
+          84500,
+          84500
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.4675347024022809,
+        "costs": [
+          188000,
+          188000,
+          162000,
+          41500
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0006614583772043048,
+        "costs": [
+          26900,
+          26900,
+          26900,
+          26800
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          14700,
+          14700,
+          14700,
+          14700
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.2984616049038778e-09,
+        "costs": [
+          46200,
+          46200,
+          46200,
+          46200
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.00015353523400083447,
+        "costs": [
+          7370,
+          7370,
+          7370,
+          7360
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -4.677827358534614e-06,
+        "costs": [
+          10300,
+          10300,
+          10300,
+          10300
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          91100,
+          91100,
+          91100,
+          91100
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mmr:default:hosp8500",
+    "country_code": "mmr",
+    "country_label": "Myanmar",
+    "behaviour": "default",
+    "hospital_capacity": "8500",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.0477024800305705,
+        "costs": [
+          898000,
+          793000,
+          382000,
+          34900
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.02527888936416005,
+        "costs": [
+          94200,
+          93900,
+          92900,
+          86900
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          71600,
+          71600,
+          71600,
+          71600
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -8.616190427801485e-10,
+        "costs": [
+          209000,
+          209000,
+          209000,
+          209000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.050442665542551876,
+        "costs": [
+          40700,
+          40700,
+          38900,
+          34900
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.08862961435514301,
+        "costs": [
+          49500,
+          49400,
+          42800,
+          38600
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          408000,
+          408000,
+          408000,
+          408000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.2796016813053576,
+        "costs": [
+          833000,
+          833000,
+          790000,
+          334000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.00035771457049857955,
+        "costs": [
+          93200,
+          93200,
+          93200,
+          93100
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          37400,
+          37400,
+          37400,
+          37400
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.1863027893355138e-09,
+        "costs": [
+          177000,
+          177000,
+          177000,
+          177000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.00021732838976546988,
+        "costs": [
+          5750,
+          5750,
+          5750,
+          5740
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -2.523727614089921e-06,
+        "costs": [
+          18400,
+          18400,
+          18400,
+          18400
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          382000,
+          382000,
+          382000,
+          382000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.35485819758565534,
+        "costs": [
+          873000,
+          873000,
+          796000,
+          276000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0004127747637888035,
+        "costs": [
+          120000,
+          120000,
+          120000,
+          120000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          66100,
+          66100,
+          66100,
+          66100
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.1673536803868955e-09,
+        "costs": [
+          206000,
+          206000,
+          206000,
+          206000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -7.604126935749634e-05,
+        "costs": [
+          33800,
+          33800,
+          33800,
+          33800
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -1.8844783392424346e-06,
+        "costs": [
+          46200,
+          46200,
+          46200,
+          46200
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          410000,
+          410000,
+          410000,
+          410000
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mmr:max:hosp11000",
+    "country_code": "mmr",
+    "country_label": "Myanmar",
+    "behaviour": "max",
+    "hospital_capacity": "11000",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.047621456714658,
+        "costs": [
+          897000,
+          793000,
+          381000,
+          34900
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.02532682859185602,
+        "costs": [
+          93700,
+          93300,
+          92300,
+          86400
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          71300,
+          71300,
+          71300,
+          71300
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.0064711730706222e-09,
+        "costs": [
+          209000,
+          209000,
+          209000,
+          209000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.04790103325103221,
+        "costs": [
+          40300,
+          40300,
+          38300,
+          34900
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.08912050306065052,
+        "costs": [
+          48500,
+          48500,
+          41400,
+          38000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          407000,
+          407000,
+          407000,
+          407000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.28010043548900115,
+        "costs": [
+          833000,
+          833000,
+          790000,
+          333000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0003554506787882161,
+        "costs": [
+          92900,
+          92900,
+          92900,
+          92800
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          37100,
+          37100,
+          37100,
+          37100
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.1880400663244472e-09,
+        "costs": [
+          177000,
+          177000,
+          177000,
+          177000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.00024098695418395266,
+        "costs": [
+          5210,
+          5210,
+          5210,
+          5210
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -2.550105392451485e-06,
+        "costs": [
+          18200,
+          18200,
+          18200,
+          18200
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -7.864162654414031e-11,
+        "costs": [
+          381000,
+          381000,
+          381000,
+          381000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.35579331162860284,
+        "costs": [
+          873000,
+          873000,
+          795000,
+          275000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.000410215522401991,
+        "costs": [
+          120000,
+          120000,
+          120000,
+          120000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -4.553983856681043e-10,
+        "costs": [
+          65900,
+          65900,
+          65900,
+          65900
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.022723239429979e-09,
+        "costs": [
+          205000,
+          205000,
+          205000,
+          205000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -7.482276375831986e-05,
+        "costs": [
+          33200,
+          33200,
+          33200,
+          33200
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -1.8931786037512665e-06,
+        "costs": [
+          46000,
+          46000,
+          46000,
+          46000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          409000,
+          409000,
+          409000,
+          409000
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mys:default:hosp9100",
+    "country_code": "mys",
+    "country_label": "Malaysia",
+    "behaviour": "default",
+    "hospital_capacity": "9100",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.076543235284114,
+        "costs": [
+          2270000,
+          949000,
+          124000,
+          123000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.07797822430979248,
+        "costs": [
+          386000,
+          386000,
+          373000,
+          301000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -2.4517987640138017e-10,
+        "costs": [
+          245000,
+          245000,
+          245000,
+          245000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -2.520579371889653e-08,
+        "costs": [
+          669000,
+          669000,
+          669000,
+          669000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.03268417332680187,
+        "costs": [
+          136000,
+          130000,
+          125000,
+          123000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.12439748861216895,
+        "costs": [
+          183000,
+          183000,
+          168000,
+          124000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -2.0033063208302337e-09,
+        "costs": [
+          1110000,
+          1110000,
+          1110000,
+          1110000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.6073724814448611,
+        "costs": [
+          2570000,
+          2540000,
+          1530000,
+          14300
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0024884490776491573,
+        "costs": [
+          300000,
+          300000,
+          300000,
+          298000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -7.145718683432279e-10,
+        "costs": [
+          126000,
+          126000,
+          126000,
+          126000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -7.163888149364084e-09,
+        "costs": [
+          574000,
+          574000,
+          574000,
+          574000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.018475525529140134,
+        "costs": [
+          9760,
+          9760,
+          9760,
+          9180
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.00046176577832657273,
+        "costs": [
+          56900,
+          56900,
+          56900,
+          56800
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -3.078316801463643e-09,
+        "costs": [
+          1200000,
+          1200000,
+          1200000,
+          1200000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.0601105228940018,
+        "costs": [
+          2660000,
+          2580000,
+          1340000,
+          96700
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.002791861679624574,
+        "costs": [
+          383000,
+          383000,
+          383000,
+          379000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -2.7988864559347346e-10,
+        "costs": [
+          214000,
+          214000,
+          214000,
+          214000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -7.2637709180867205e-09,
+        "costs": [
+          661000,
+          661000,
+          661000,
+          661000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.002719094256075039,
+        "costs": [
+          97600,
+          97600,
+          97600,
+          96800
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.0004218314404694112,
+        "costs": [
+          141000,
+          141000,
+          141000,
+          141000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -3.335084208799799e-09,
+        "costs": [
+          1270000,
+          1270000,
+          1270000,
+          1270000
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mys:max:hosp11900",
+    "country_code": "mys",
+    "country_label": "Malaysia",
+    "behaviour": "max",
+    "hospital_capacity": "11900",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.0753744341905764,
+        "costs": [
+          2260000,
+          944000,
+          124000,
+          123000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.08032726068217819,
+        "costs": [
+          381000,
+          381000,
+          369000,
+          295000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -1.2351240030739064e-10,
+        "costs": [
+          243000,
+          243000,
+          243000,
+          243000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -2.527462932278013e-08,
+        "costs": [
+          667000,
+          667000,
+          667000,
+          667000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.020660112638452688,
+        "costs": [
+          130000,
+          130000,
+          125000,
+          123000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.12216177552711098,
+        "costs": [
+          181000,
+          181000,
+          166000,
+          124000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -2.008870403358287e-09,
+        "costs": [
+          1110000,
+          1110000,
+          1110000,
+          1110000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.6069138754022814,
+        "costs": [
+          2570000,
+          2530000,
+          1520000,
+          14300
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.002493888938012745,
+        "costs": [
+          298000,
+          298000,
+          298000,
+          296000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -7.251085065718143e-10,
+        "costs": [
+          124000,
+          124000,
+          124000,
+          124000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -7.186228678790485e-09,
+        "costs": [
+          572000,
+          572000,
+          572000,
+          572000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.018475525529140134,
+        "costs": [
+          9760,
+          9760,
+          9760,
+          9180
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.00038832696240049814,
+        "costs": [
+          55000,
+          55000,
+          55000,
+          54900
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -3.0862123523434095e-09,
+        "costs": [
+          1200000,
+          1200000,
+          1200000,
+          1200000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.0598196662169896,
+        "costs": [
+          2650000,
+          2580000,
+          1330000,
+          96700
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0027963569356112216,
+        "costs": [
+          381000,
+          381000,
+          381000,
+          377000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -2.822989841888557e-10,
+        "costs": [
+          213000,
+          213000,
+          213000,
+          213000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -7.283461300744421e-09,
+        "costs": [
+          659000,
+          659000,
+          659000,
+          659000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.002719094256075039,
+        "costs": [
+          97600,
+          97600,
+          97600,
+          96800
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.0003595377618577089,
+        "costs": [
+          139000,
+          139000,
+          139000,
+          139000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -3.3431929225002933e-09,
+        "costs": [
+          1270000,
+          1270000,
+          1270000,
+          1270000
+        ]
+      }
+    ]
+  },
+  {
+    "id": "phl:default:hosp16300",
+    "country_code": "phl",
+    "country_label": "Philippines",
+    "behaviour": "default",
+    "hospital_capacity": "16300",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.0101077154903029,
+        "costs": [
+          3450000,
+          3090000,
+          1510000,
+          151000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.023516607554551962,
+        "costs": [
+          376000,
+          375000,
+          371000,
+          349000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          290000,
+          290000,
+          290000,
+          290000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -9.022867786256938e-10,
+        "costs": [
+          831000,
+          831000,
+          831000,
+          831000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.043926524835141124,
+        "costs": [
+          173000,
+          173000,
+          166000,
+          151000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.07817692391772794,
+        "costs": [
+          203000,
+          203000,
+          169000,
+          166000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          1600000,
+          1600000,
+          1600000,
+          1600000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.25490113365846767,
+        "costs": [
+          3140000,
+          3140000,
+          3010000,
+          1360000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.00035279943677082317,
+        "costs": [
+          362000,
+          362000,
+          362000,
+          361000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -2.1036239417071556e-10,
+        "costs": [
+          143000,
+          143000,
+          143000,
+          143000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.3417581712360515e-09,
+        "costs": [
+          693000,
+          693000,
+          693000,
+          693000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.00015398850873680204,
+        "costs": [
+          22800,
+          22800,
+          22800,
+          22800
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -2.1223421766691786e-06,
+        "costs": [
+          68600,
+          68600,
+          68600,
+          68600
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -2.0195045635773566e-11,
+        "costs": [
+          1490000,
+          1490000,
+          1490000,
+          1490000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.32378912837333723,
+        "costs": [
+          3310000,
+          3310000,
+          3050000,
+          1160000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.0003973101089224329,
+        "costs": [
+          475000,
+          475000,
+          475000,
+          474000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -1.1422010004480398e-10,
+        "costs": [
+          263000,
+          263000,
+          263000,
+          263000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.144676353703744e-09,
+        "costs": [
+          812000,
+          812000,
+          812000,
+          812000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -4.978998893356845e-05,
+        "costs": [
+          140000,
+          140000,
+          140000,
+          140000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -1.4296704742733368e-06,
+        "costs": [
+          185000,
+          185000,
+          185000,
+          185000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -1.87252879868538e-11,
+        "costs": [
+          1600000,
+          1600000,
+          1600000,
+          1600000
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sgp:default:hosp2200",
+    "country_code": "sgp",
+    "country_label": "Singapore",
+    "behaviour": "default",
+    "hospital_capacity": "2200",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.16685620001393087,
+        "costs": [
+          1650000,
+          1650000,
+          1540000,
+          966000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -2.8893495318094153e-05,
+        "costs": [
+          197000,
+          197000,
+          197000,
+          197000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          152000,
+          152000,
+          152000,
+          152000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": 0.0,
+        "costs": [
+          399000,
+          399000,
+          399000,
+          399000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -3.8414871283976026e-10,
+        "costs": [
+          78100,
+          78100,
+          78100,
+          78100
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": 0.0,
+        "costs": [
+          116000,
+          116000,
+          116000,
+          116000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          787000,
+          787000,
+          787000,
+          787000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.011405081889573765,
+        "costs": [
+          1640000,
+          1640000,
+          1640000,
+          1580000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -3.5114321578433306e-06,
+        "costs": [
+          185000,
+          185000,
+          185000,
+          185000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          91400,
+          91400,
+          91400,
+          91400
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -8.854197375285366e-11,
+        "costs": [
+          339000,
+          339000,
+          339000,
+          339000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -7.793686229717877e-09,
+        "costs": [
+          19200,
+          19200,
+          19200,
+          19200
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": 0.0,
+        "costs": [
+          56800,
+          56800,
+          56800,
+          56800
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          727000,
+          727000,
+          727000,
+          727000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.01798773605227897,
+        "costs": [
+          1590000,
+          1590000,
+          1590000,
+          1500000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -4.028057979965638e-06,
+        "costs": [
+          211000,
+          211000,
+          211000,
+          211000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          120000,
+          120000,
+          120000,
+          120000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -8.163336673305821e-11,
+        "costs": [
+          367000,
+          367000,
+          367000,
+          367000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -1.883070765984485e-09,
+        "costs": [
+          47800,
+          47800,
+          47800,
+          47800
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": 0.0,
+        "costs": [
+          85400,
+          85400,
+          85400,
+          85400
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          756000,
+          756000,
+          756000,
+          756000
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tha:default:hosp22000",
+    "country_code": "tha",
+    "country_label": "Thailand",
+    "behaviour": "default",
+    "hospital_capacity": "22000",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.0510152219246753,
+        "costs": [
+          4190000,
+          3990000,
+          2180000,
+          154000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.012840220449259476,
+        "costs": [
+          431000,
+          429000,
+          428000,
+          413000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          354000,
+          354000,
+          354000,
+          354000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -6.241599237455375e-10,
+        "costs": [
+          1010000,
+          1010000,
+          1010000,
+          1010000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.04740775847007548,
+        "costs": [
+          162000,
+          162000,
+          151000,
+          142000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.025994223514819836,
+        "costs": [
+          196000,
+          184000,
+          181000,
+          181000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          1820000,
+          1820000,
+          1820000,
+          1820000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.15825545645005173,
+        "costs": [
+          3780000,
+          3780000,
+          3720000,
+          2240000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.00016983949939124442,
+        "costs": [
+          467000,
+          467000,
+          467000,
+          467000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -1.3694059219915288e-10,
+        "costs": [
+          219000,
+          219000,
+          219000,
+          219000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.2208836608351703e-09,
+        "costs": [
+          885000,
+          885000,
+          885000,
+          885000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -5.6809438287963585e-05,
+        "costs": [
+          27100,
+          27100,
+          27100,
+          27100
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -3.968805257770214e-07,
+        "costs": [
+          111000,
+          111000,
+          111000,
+          111000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          1700000,
+          1700000,
+          1700000,
+          1700000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.20965726539876678,
+        "costs": [
+          3880000,
+          3880000,
+          3740000,
+          1950000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.00020983981466002888,
+        "costs": [
+          552000,
+          552000,
+          552000,
+          552000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": -1.912139779847166e-10,
+        "costs": [
+          314000,
+          314000,
+          314000,
+          314000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -1.0731559640930754e-09,
+        "costs": [
+          978000,
+          978000,
+          978000,
+          978000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -2.587693242084299e-05,
+        "costs": [
+          118000,
+          118000,
+          118000,
+          118000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -3.771442539601821e-07,
+        "costs": [
+          200000,
+          200000,
+          200000,
+          200000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          1800000,
+          1800000,
+          1800000,
+          1800000
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vnm:default:hosp38000",
+    "country_code": "vnm",
+    "country_label": "Vietnam",
+    "behaviour": "default",
+    "hospital_capacity": "38000",
+    "rows": [
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -1.052536654470387,
+        "costs": [
+          2610000,
+          2450000,
+          1280000,
+          96900
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.01572832329912437,
+        "costs": [
+          254000,
+          253000,
+          251000,
+          241000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          197000,
+          197000,
+          197000,
+          197000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -4.696744326793123e-10,
+        "costs": [
+          575000,
+          575000,
+          575000,
+          575000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.018238748617262424,
+        "costs": [
+          99100,
+          99100,
+          98000,
+          93600
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -0.030444165071877548,
+        "costs": [
+          119000,
+          112000,
+          108000,
+          108000
+        ]
+      },
+      {
+        "response_id": "elimination",
+        "response_label": "Elimination",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          1170000,
+          1170000,
+          1170000,
+          1170000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.18025475590537532,
+        "costs": [
+          2350000,
+          2350000,
+          2300000,
+          1300000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.00017956020481317835,
+        "costs": [
+          258000,
+          258000,
+          258000,
+          258000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          106000,
+          106000,
+          106000,
+          106000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -9.202969053490051e-10,
+        "costs": [
+          489000,
+          489000,
+          489000,
+          489000
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -0.0001322039191192559,
+        "costs": [
+          8120,
+          8120,
+          8120,
+          8120
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -6.554953827730969e-07,
+        "costs": [
+          54500,
+          54500,
+          54500,
+          54500
+        ]
+      },
+      {
+        "response_id": "economic_closures",
+        "response_label": "Business closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": -2.7353053155820816e-11,
+        "costs": [
+          1100000,
+          1100000,
+          1100000,
+          1100000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "SARS 2004",
+        "log_slope": -0.24215608752032125,
+        "costs": [
+          2450000,
+          2450000,
+          2330000,
+          1110000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 wild-type",
+        "log_slope": -0.000217760468553152,
+        "costs": [
+          325000,
+          325000,
+          325000,
+          325000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Omicron",
+        "log_slope": 0.0,
+        "costs": [
+          178000,
+          178000,
+          178000,
+          178000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Covid-19 Delta",
+        "log_slope": -8.031266318653251e-10,
+        "costs": [
+          560000,
+          560000,
+          560000,
+          560000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 2009 (Swine flu)",
+        "log_slope": -2.842097154420742e-05,
+        "costs": [
+          79400,
+          79400,
+          79400,
+          79400
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1957",
+        "log_slope": -5.280225638060187e-07,
+        "costs": [
+          123000,
+          123000,
+          123000,
+          123000
+        ]
+      },
+      {
+        "response_id": "school_closures",
+        "response_label": "School closures",
+        "pathogen_label": "Influenza 1918 (Spanish flu)",
+        "log_slope": 0.0,
+        "costs": [
+          1170000,
+          1170000,
+          1170000,
+          1170000
+        ]
+      }
+    ]
+  }
+];
+
+const dataSourceMeta = {
+  "kind": "imported",
+  "importedAt": "2026-05-01 19:22 BST",
+  "sourceDirectory": "/home/dmears/projects/jameel-institute/sweeper",
+  "modelVersion": "0.3.7",
+  "detailsHtml": "Data imported <code>2026-05-01 19:22 BST</code> from <code>/home/dmears/projects/jameel-institute/sweeper</code>; model version = <code>0.3.7</code>."
 };
 
 const datasetsById = new Map(datasets.map(dataset => [dataset.id, dataset]));
