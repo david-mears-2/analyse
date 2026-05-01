@@ -93,8 +93,8 @@ code { font-family: ui-monospace, monospace; }
   </label>
 </div>
 <p class="meta">
-  <span id="meta-summary"></span> R API version =
-  <code>0.1.12</code>; model version = <code>0.3.7</code>.
+  <span id="meta-summary"></span>
+  <span id="meta-details"></span>
 </p>
 <div id="heatmap-legend" class="heatmap-legend" hidden></div>
 <table>
@@ -7943,6 +7943,10 @@ const datasets = [
   }
 ];
 
+const dataSourceMeta = {
+  detailsHtml: 'R API version = <code>0.1.12</code>; model version = <code>0.3.7</code>.'
+};
+
 const datasetsById = new Map(datasets.map(dataset => [dataset.id, dataset]));
 const countryNames = new Map();
 datasets.forEach(dataset => {
@@ -8414,7 +8418,20 @@ function renderHeatmapLegend(scale) {
   `;
 }
 
+const viewModeOptions = [
+  { value: "vaccine", label: "Vaccine preparedness" },
+  { value: "capacity", label: "Hospital capacity" },
+  { value: "heatmap", label: "Heatmap" }
+];
+
 function setOptions(select, options, selectedValue) {
+  if (!options.length) {
+    select.innerHTML = "";
+    select.value = "";
+    select.disabled = true;
+    return;
+  }
+  select.disabled = false;
   select.innerHTML = options.map(option => `
     <option value="${option.value}">${option.label}</option>
   `).join("");
@@ -8426,6 +8443,16 @@ function setOptions(select, options, selectedValue) {
 function populateCountryOptions(selectedCountry) {
   const options = Array.from(countryNames, ([value, label]) => ({ value, label }));
   setOptions(countrySelect, options, selectedCountry);
+}
+
+function availableViewOptions(countryCode) {
+  return viewModeOptions.filter(option => (
+    option.value !== "heatmap" || datasetsForCountry(countryCode).length >= 2
+  ));
+}
+
+function populateViewOptions(countryCode, selectedViewMode) {
+  setOptions(viewSelect, availableViewOptions(countryCode), selectedViewMode);
 }
 
 function populateCapacityOptions(countryCode, selectedDatasetId) {
@@ -8461,6 +8488,24 @@ function render() {
   const dataset = viewMode === "vaccine"
     ? selectedDataset()
     : countryDatasets[0];
+  const tbody = document.getElementById("rows");
+  if (!countryDatasets.length || !dataset || !responseSelect.value) {
+    tbody.innerHTML = "";
+    document.getElementById("title-country").textContent = "No data";
+    document.getElementById("title-mode").textContent = "vaccine sweep";
+    document.getElementById("cost-heading").textContent = "Total cost across vaccine levels";
+    document.getElementById("metric-heading").textContent = "Log-slope";
+    capacityControl.hidden = false;
+    capacityControl.style.display = activeViewMode() === "vaccine" ? "inline-flex" : "none";
+    vaccineControl.hidden = true;
+    vaccineControl.style.display = "none";
+    heatmapLegend.hidden = true;
+    heatmapLegend.innerHTML = "";
+    metaSummary.textContent = "No embedded datasets available.";
+    metaDetails.innerHTML = dataSourceMeta.detailsHtml;
+    document.title = "Vietnam vaccine sweep";
+    return;
+  }
   const rows = viewMode === "capacity"
     ? buildCapacityRows(countrySelect.value, responseSelect.value, vaccineSelect.value)
     : viewMode === "heatmap"
@@ -8471,7 +8516,6 @@ function render() {
     : null;
   const reductionValues = reductionValuesForCountry(countrySelect.value);
   const maxAbsReduction = Math.max(1e-12, ...reductionValues.map(value => Math.abs(value)));
-  const tbody = document.getElementById("rows");
   const responseLabel = responseSelect.selectedOptions[0]?.text.toLowerCase() ?? "response";
   const vaccineLabel = vaccineSelect.selectedOptions[0]?.text.toLowerCase() ?? vaccineSelect.value;
   tbody.innerHTML = rows.map(row => {
@@ -8560,11 +8604,12 @@ function render() {
     heatmapLegend.hidden = true;
     heatmapLegend.innerHTML = "";
   }
-  document.getElementById("meta-summary").innerHTML = viewMode === "capacity"
+  metaSummary.innerHTML = viewMode === "capacity"
     ? `Hospital capacity order = ${countryDatasets.map(dataset => `<code>${titleCaseToken(dataset.behaviour)} (${dataset.hospital_capacity})</code>`).join(" \u2192 ")}, holding vaccine parameter = <code>${vaccineLabel}</code> fixed. Positive capacity-effect values mean total costs trend downward as hospital capacity increases; zero or negative values are bad.`
     : viewMode === "heatmap"
       ? `Rows run top to bottom as hospital capacity tiers ${[...countryDatasets].reverse().map(dataset => `<code>${titleCaseToken(dataset.behaviour)} (${dataset.hospital_capacity})</code>`).join(" \u2192 ")}, columns = <code>none \u2192 low \u2192 medium \u2192 high</code>. Cells still show total cost, but colors show cost reduction versus the lowest-capacity/no-vaccine baseline cell for that disease and response. Blue means higher cost than baseline, yellow means lower cost than baseline, and the color scale is normalized across the selected country. Endpoint log change and cost reduction compare the lowest-capacity/no-vaccine cell with the highest-capacity/high-vaccine cell.`
       : `Hospital capacity = <code>${dataset.behaviour}</code> (<code>${dataset.hospital_capacity}</code>), vaccine order = <code>none \u2192 low \u2192 medium \u2192 high</code>. Total costs shown as USD totals with <code>M/B/T</code> suffixes to 3 significant figures, using the rounded values from the selected CSV. Negative log-slopes shade toward green, positive slopes toward red, and near-flat slopes stay neutral.`;
+  metaDetails.innerHTML = dataSourceMeta.detailsHtml;
   document.title = viewMode === "capacity"
     ? `${dataset.country_label} ${responseLabel} hospital capacity sweep`
     : viewMode === "heatmap"
@@ -8580,8 +8625,11 @@ const capacitySelect = document.getElementById("capacity-select");
 const vaccineSelect = document.getElementById("vaccine-select");
 const responseSelect = document.getElementById("response-select");
 const heatmapLegend = document.getElementById("heatmap-legend");
+const metaSummary = document.getElementById("meta-summary");
+const metaDetails = document.getElementById("meta-details");
 
 countrySelect.addEventListener("change", event => {
+  populateViewOptions(event.target.value, viewSelect.value);
   populateCapacityOptions(event.target.value, capacitySelect.value);
   populateResponseOptions(responseSourceRows(), responseSelect.value);
   render();
@@ -8601,9 +8649,11 @@ vaccineSelect.addEventListener("change", render);
 
 responseSelect.addEventListener("change", render);
 
-populateCountryOptions("vnm");
-populateCapacityOptions(countrySelect.value, "vnm:default:hosp38000");
-populateResponseOptions(responseSourceRows(), "elimination");
+const initialCountryCode = Array.from(countryNames.keys())[0];
+populateCountryOptions(initialCountryCode);
+populateViewOptions(countrySelect.value, "vaccine");
+populateCapacityOptions(countrySelect.value, datasetsForCountry(countrySelect.value)[0]?.id);
+populateResponseOptions(responseSourceRows(), responseChoices(responseSourceRows())[0]?.value);
 render();
 </script>
 </body>
