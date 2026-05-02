@@ -52,7 +52,17 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
   font-size: 0.88rem;
   color: #666;
 }
-.heatmap-legend-bar { width: 144px; height: 12px; border-radius: 999px; }
+.heatmap-legend-steps {
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 999px;
+}
+.heatmap-legend-step {
+  width: 20px;
+  height: 12px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
 code { font-family: ui-monospace, monospace; }
 </style>
 </head>
@@ -15827,6 +15837,26 @@ function formatUsdBillionsFromMillionsDelta(value) {
   return `${value < 0 ? "-" : ""}$${Math.abs(Number(rounded)).toString()}B`;
 }
 
+function baselineChangeRatio(baselineValue, value) {
+  if (!Number.isFinite(baselineValue) || Math.abs(baselineValue) < 1e-12) {
+    return 0;
+  }
+  return (baselineValue - value) / baselineValue;
+}
+
+function formatPercentDelta(value) {
+  const percent = value * 100;
+  if (Math.abs(percent) < 0.005) {
+    return "0%";
+  }
+  return `${Number(percent.toPrecision(3)).toString()}%`;
+}
+
+function colorScaleStrength(value) {
+  const clamped = Math.max(0, Math.min(value, 1));
+  return Math.sqrt(clamped);
+}
+
 function sparkSvg(values, width = 120, height = 32) {
   const max = Math.max(...values);
   const ys = values.map(v => {
@@ -16039,7 +16069,8 @@ function buildHeatmapRows(countryCode, responseId) {
       const baselineCost = matrixRows[0].values[0];
       const matrixRowsWithReductions = matrixRows.map(matrixRow => ({
         ...matrixRow,
-        reductions: matrixRow.values.map(value => baselineCost - value)
+        reductions: matrixRow.values.map(value => baselineCost - value),
+        reductionRatios: matrixRow.values.map(value => baselineChangeRatio(baselineCost, value))
       }));
       const startCost = baselineCost;
       const endCost = matrixRows[matrixRows.length - 1].values[vaccineLevels.length - 1];
@@ -16047,6 +16078,7 @@ function buildHeatmapRows(countryCode, responseId) {
         pathogen_label: baseRow.pathogen_label,
         metric: Math.log(startCost / endCost),
         reduction: startCost - endCost,
+        reductionRatio: baselineChangeRatio(startCost, endCost),
         baselineCost,
         matrixRows: matrixRowsWithReductions
       };
@@ -16060,21 +16092,21 @@ function heatmapScale(values) {
   };
 }
 
-function reductionValuesForCountry(countryCode) {
+function reductionRatioValuesForCountry(countryCode) {
   const countryDatasets = datasetsForCountry(countryCode);
   const responses = responseChoices(countryDatasets[0]?.rows ?? []);
   return [
     ...countryDatasets.flatMap(dataset =>
-      dataset.rows.map(row => row.costs[0] - row.costs[row.costs.length - 1])
+      dataset.rows.map(row => baselineChangeRatio(row.costs[0], row.costs[row.costs.length - 1]))
     ),
     ...responses.flatMap(response =>
       vaccineLevels.flatMap(vaccineLevel =>
         buildCapacityRows(countryCode, response.value, vaccineLevel)
-          .map(row => row.costs[0] - row.costs[row.costs.length - 1])
+          .map(row => baselineChangeRatio(row.costs[0], row.costs[row.costs.length - 1]))
       )
     ),
     ...responses.flatMap(response =>
-      buildHeatmapRows(countryCode, response.value).map(row => row.reduction)
+      buildHeatmapRows(countryCode, response.value).map(row => row.reductionRatio)
     )
   ];
 }
@@ -16084,7 +16116,7 @@ function heatmapReductionScaleForCountry(countryCode) {
   const reductions = responses.flatMap(response =>
     buildHeatmapRows(countryCode, response.value)
       .flatMap(row => row.matrixRows)
-      .flatMap(matrixRow => matrixRow.reductions)
+      .flatMap(matrixRow => matrixRow.reductionRatios)
   );
   return heatmapScale(reductions.length ? reductions : [0]);
 }
@@ -16156,12 +16188,12 @@ function capacityTrendPalette(capacityEffect) {
   };
 }
 
-function reductionPalette(reduction, maxAbsReduction) {
+function reductionPalette(reductionRatio, maxAbsReduction) {
   const magnitude = maxAbsReduction > 0
-    ? Math.min(Math.abs(reduction) / maxAbsReduction, 1)
+    ? colorScaleStrength(Math.min(Math.abs(reductionRatio) / maxAbsReduction, 1))
     : 0;
   const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  if (Math.abs(reduction) < 1e-12 || magnitude < 0.02) {
+  if (Math.abs(reductionRatio) < 1e-12 || magnitude < 0.02) {
     const h = 215;
     const s = 8 + magnitude * 10;
     const l = darkMode ? 30 + magnitude * 6 : 88 - magnitude * 8;
@@ -16171,17 +16203,17 @@ function reductionPalette(reduction, maxAbsReduction) {
       fg: readableTextColor(h, s, l)
     };
   }
-  const positive = reduction > 0;
+  const positive = reductionRatio > 0;
   const hue = positive ? 148 : 10;
   const saturation = positive
-    ? 28 + magnitude * 46
-    : 10 + magnitude * 58;
+    ? 34 + magnitude * 48
+    : 14 + magnitude * 62;
   const lightness = positive
-    ? (darkMode ? 29 + magnitude * 10 : 92 - magnitude * 18)
-    : (darkMode ? 31 + magnitude * 8 : 92 - magnitude * 22);
+    ? (darkMode ? 28 + magnitude * 12 : 92 - magnitude * 24)
+    : (darkMode ? 30 + magnitude * 10 : 92 - magnitude * 28);
   return {
     bg: hslString(hue, saturation, lightness),
-    border: hslString(hue, 18 + magnitude * 48, darkMode ? 52 : 64 - magnitude * 16),
+    border: hslString(hue, 22 + magnitude * 52, darkMode ? 52 : 64 - magnitude * 18),
     fg: readableTextColor(hue, saturation, lightness)
   };
 }
@@ -16194,22 +16226,34 @@ function heatmapNeutralPalette() {
   };
 }
 
-function heatmapCellPalette(reduction, min, max) {
+const positiveHeatmapYellowStop = 0.78;
+
+function heatmapCellPalette(reductionRatio, min, max) {
   const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  if (!(max > min) || Math.abs(reduction) < 1e-12) {
+  if (!(max > min) || Math.abs(reductionRatio) < 1e-12) {
     return heatmapNeutralPalette();
   }
-  if (reduction > 0) {
-    const t = Math.max(0, Math.min(max > 0 ? reduction / max : 0, 1));
+  if (reductionRatio > 0) {
+    const t = colorScaleStrength(Math.max(0, Math.min(max > 0 ? reductionRatio / max : 0, 1)));
+    const yellowPhase = Math.min(t / positiveHeatmapYellowStop, 1);
+    const whitePhase = Math.max(0, (t - positiveHeatmapYellowStop) / (1 - positiveHeatmapYellowStop));
     return {
-      bg: hslString(52, darkMode ? 22 + t * 64 : 24 + t * 58, darkMode ? 32 + t * 28 : 95 - t * 36),
-      border: hslString(52, darkMode ? 18 + t * 34 : 20 + t * 28, darkMode ? 46 + t * 14 : 76 - t * 16)
+      bg: hslString(
+        50,
+        (darkMode ? 18 + yellowPhase * 58 : 10 + yellowPhase * 82) * (1 - whitePhase),
+        darkMode ? 34 + yellowPhase * 20 + whitePhase * 46 : 95 - yellowPhase * 16 + whitePhase * 21
+      ),
+      border: hslString(
+        48,
+        darkMode ? 24 + yellowPhase * 42 : 28 + yellowPhase * 44,
+        darkMode ? 46 + yellowPhase * 10 + whitePhase * 8 : 76 - yellowPhase * 18 - whitePhase * 8
+      )
     };
   }
-  const t = Math.max(0, Math.min(min < 0 ? reduction / min : 0, 1));
+  const t = colorScaleStrength(Math.max(0, Math.min(min < 0 ? reductionRatio / min : 0, 1)));
   return {
-    bg: hslString(220, darkMode ? 24 + t * 58 : 28 + t * 48, darkMode ? 30 + t * 24 : 95 - t * 42),
-    border: hslString(220, darkMode ? 18 + t * 34 : 20 + t * 28, darkMode ? 46 + t * 16 : 76 - t * 20)
+    bg: hslString(220, darkMode ? 28 + t * 62 : 34 + t * 52, darkMode ? 28 + t * 30 : 96 - t * 46),
+    border: hslString(220, darkMode ? 20 + t * 36 : 24 + t * 30, darkMode ? 46 + t * 18 : 78 - t * 22)
   };
 }
 
@@ -16221,12 +16265,13 @@ function heatmapGrid(row, scale) {
     <div class="heatmap-axis heatmap-axis-y" title="${matrixRow.label}">${matrixRow.shortLabel}</div>
     ${matrixRow.values.map((value, index) => {
       const reduction = matrixRow.reductions[index];
-      const palette = heatmapCellPalette(reduction, scale.min, scale.max);
+      const reductionRatio = matrixRow.reductionRatios[index];
+      const palette = heatmapCellPalette(reductionRatio, scale.min, scale.max);
       return `
         <div
           class="heatmap-cell"
           style="background: ${palette.bg}; border-color: ${palette.border};"
-          title="${matrixRow.label} \u2022 ${titleCaseToken(vaccineLevels[index])}: ${formatUsdFromMillions(value)} (${formatUsdDeltaFromMillions(reduction)} vs baseline)"
+          title="${matrixRow.label} \u2022 ${titleCaseToken(vaccineLevels[index])}: ${formatUsdFromMillions(value)} (${formatUsdDeltaFromMillions(reduction)}, ${formatPercentDelta(reductionRatio)} vs baseline)"
         ></div>
       `;
     }).join("")}
@@ -16243,23 +16288,40 @@ function heatmapGrid(row, scale) {
 }
 
 function renderHeatmapLegend(scale) {
-  const low = heatmapCellPalette(scale.min, scale.min, scale.max);
-  const mid = heatmapNeutralPalette();
-  const high = heatmapCellPalette(scale.max, scale.min, scale.max);
-  const zeroStop = scale.max > scale.min
-    ? Math.max(0, Math.min((-scale.min / (scale.max - scale.min)) * 100, 100))
-    : 50;
+  const stepValues = [
+    scale.min,
+    scale.min * 0.75,
+    scale.min * 0.5,
+    scale.min * 0.25,
+    0,
+    scale.max * 0.3,
+    scale.max * 0.5,
+    scale.max * 0.68,
+    scale.max * positiveHeatmapYellowStop,
+    scale.max
+  ];
+  const stepColors = stepValues.map(value => (
+    Math.abs(value) < 1e-12
+      ? heatmapNeutralPalette()
+      : heatmapCellPalette(value, scale.min, scale.max)
+  ));
+  const legendBorder = stepColors[stepColors.length - 1].border;
   heatmapLegend.hidden = false;
   heatmapLegend.innerHTML = `
-    <span>Heatmap colors show cost reduction versus the lowest-capacity, no-vaccine baseline.</span>
-    <span>${formatUsdDeltaFromMillions(scale.min)}</span>
+    <span>Heatmap colors show relative percentage change versus the lowest-capacity, no-vaccine baseline.</span>
+    <span>${formatPercentDelta(scale.min)}</span>
     <span
-      class="heatmap-legend-bar"
-      style="background: linear-gradient(90deg, ${low.bg} 0%, ${mid.bg} ${zeroStop.toFixed(1)}%, ${high.bg} 100%); border: 1px solid ${high.border};"
+      class="heatmap-legend-steps"
+      style="border: 1px solid ${legendBorder};"
       aria-hidden="true"
-    ></span>
-    <span>${formatUsdDeltaFromMillions(scale.max)}</span>
-    <span>Blue = higher cost than baseline; neutral = baseline; yellow = lower cost than baseline. Colors are comparable across the selected country.</span>
+    >${stepColors.map((palette, index) => `
+      <span
+        class="heatmap-legend-step"
+        style="background: ${palette.bg}; border-color: ${palette.border};${index === 0 ? " border-left: 1px solid transparent;" : ""}${index === stepColors.length - 1 ? " border-right: 1px solid transparent;" : ""}"
+      ></span>
+    `).join("")}</span>
+    <span>${formatPercentDelta(scale.max)}</span>
+    <span>Blue = higher cost than baseline; neutral = baseline; yellow to white = lower cost than baseline. Equal colors mean similar relative savings versus baseline even when absolute disease costs differ.</span>
   `;
 }
 
@@ -16359,13 +16421,13 @@ function render() {
   const heatmapScale = viewMode === "heatmap"
     ? heatmapReductionScaleForCountry(countrySelect.value)
     : null;
-  const reductionValues = reductionValuesForCountry(countrySelect.value);
+  const reductionValues = reductionRatioValuesForCountry(countrySelect.value);
   const maxAbsReduction = Math.max(1e-12, ...reductionValues.map(value => Math.abs(value)));
   const responseLabel = responseSelect.selectedOptions[0]?.text.toLowerCase() ?? "response";
   const vaccineLabel = vaccineSelect.selectedOptions[0]?.text.toLowerCase() ?? vaccineSelect.value;
   tbody.innerHTML = rows.map(row => {
     if (viewMode === "heatmap") {
-      const reductionPaletteValue = reductionPalette(row.reduction, maxAbsReduction);
+      const reductionPaletteValue = reductionPalette(row.reductionRatio, maxAbsReduction);
       return `
         <tr>
           <td>${row.pathogen_label}</td>
@@ -16375,7 +16437,7 @@ function render() {
             <span
               class="trend-badge"
               style="--trend-bg: ${reductionPaletteValue.bg}; --trend-border: ${reductionPaletteValue.border}; --trend-fg: ${reductionPaletteValue.fg};"
-              title="${formatUsdDeltaFromMillions(row.reduction)}"
+              title="${formatUsdDeltaFromMillions(row.reduction)} (${formatPercentDelta(row.reductionRatio)} vs baseline)"
             >
               <span>${formatUsdBillionsFromMillionsDelta(row.reduction)}</span>
             </span>
@@ -16389,7 +16451,8 @@ function render() {
       : vaccineTrendPalette(metric);
     const slope = formatLogSlope(metric);
     const reduction = row.costs[0] - row.costs[row.costs.length - 1];
-    const reductionPaletteValue = reductionPalette(reduction, maxAbsReduction);
+    const reductionRatio = baselineChangeRatio(row.costs[0], row.costs[row.costs.length - 1]);
+    const reductionPaletteValue = reductionPalette(reductionRatio, maxAbsReduction);
     const nums = viewMode === "capacity"
       ? formatCostSeries(row.costs, row.labels)
       : row.costs.map(formatUsdFromMillions).join(" ");
@@ -16413,7 +16476,7 @@ function render() {
           <span
             class="trend-badge"
             style="--trend-bg: ${reductionPaletteValue.bg}; --trend-border: ${reductionPaletteValue.border}; --trend-fg: ${reductionPaletteValue.fg};"
-            title="${formatUsdDeltaFromMillions(reduction)}"
+            title="${formatUsdDeltaFromMillions(reduction)} (${formatPercentDelta(reductionRatio)} vs baseline)"
           >
             <span>${formatUsdBillionsFromMillionsDelta(reduction)}</span>
           </span>
@@ -16452,7 +16515,7 @@ function render() {
   metaSummary.innerHTML = viewMode === "capacity"
     ? `Hospital capacity order = ${countryDatasets.map(dataset => `<code>${titleCaseToken(dataset.behaviour)} (${dataset.hospital_capacity})</code>`).join(" \u2192 ")}, holding vaccine parameter = <code>${vaccineLabel}</code> fixed. Positive capacity-effect values mean total costs trend downward as hospital capacity increases; zero or negative values are bad.`
     : viewMode === "heatmap"
-      ? `Rows run top to bottom as hospital capacity tiers ${[...countryDatasets].reverse().map(dataset => `<code>${titleCaseToken(dataset.behaviour)} (${dataset.hospital_capacity})</code>`).join(" \u2192 ")}, columns = <code>none \u2192 low \u2192 medium \u2192 high</code>. Cells still show total cost, but colors show cost reduction versus the lowest-capacity/no-vaccine baseline cell for that disease and response. Blue means higher cost than baseline, yellow means lower cost than baseline, and the color scale is normalized across the selected country. Endpoint log change and cost reduction compare the lowest-capacity/no-vaccine cell with the highest-capacity/high-vaccine cell.`
+      ? `Rows run top to bottom as hospital capacity tiers ${[...countryDatasets].reverse().map(dataset => `<code>${titleCaseToken(dataset.behaviour)} (${dataset.hospital_capacity})</code>`).join(" \u2192 ")}, columns = <code>none \u2192 low \u2192 medium \u2192 high</code>. Cells still show total cost, but colors now show percentage savings versus the lowest-capacity/no-vaccine baseline cell for that disease and response. Blue means higher cost than baseline, yellow through white means lower cost than baseline, and the color scale is normalized to relative change across the selected country rather than absolute USD totals. Endpoint log change and cost reduction compare the lowest-capacity/no-vaccine cell with the highest-capacity/high-vaccine cell.`
       : `Hospital capacity = <code>${dataset.behaviour}</code> (<code>${dataset.hospital_capacity}</code>), vaccine order = <code>none \u2192 low \u2192 medium \u2192 high</code>. Total costs shown as USD totals with <code>M/B/T</code> suffixes to 3 significant figures, using the rounded values from the selected CSV. Negative log-slopes shade toward green, positive slopes toward red, and near-flat slopes stay neutral.`;
   metaDetails.innerHTML = dataSourceMeta.detailsHtml;
   document.title = viewMode === "capacity"
